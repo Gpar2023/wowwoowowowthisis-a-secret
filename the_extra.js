@@ -197,7 +197,10 @@ var __ATMAIN__ = [];
 var __ATPOSTRUN__ = [];
 var runtimeInitialized = false; */
 
-var wasmMemory;
+/* var wasmMemory; */
+var wasmMemory = new WebAssembly.Memory({ initial: 256, maximum: 512 });
+var b = wasmMemory.buffer;
+
 var ABORT = false;
 var EXITSTATUS;
 
